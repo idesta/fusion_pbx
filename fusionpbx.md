@@ -36,3 +36,14 @@
 - paste the url from the download page then hit Enter
 
     - wget -O - https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/debian/pre-install.sh | sh;
+
+- Then check the .install.sh file existed inside the downloaded file path.
+
+    - **root@fusionpbx:/usr/src#** cd fusionpbx-install.sh/debian/
+
+    - **root@fusionpbx:/usr/src/fusionpbx-install.sh/debian#** ls
+
+            install.sh  pre-install.sh  resources
+    - > ./install.sh
+    
+
