@@ -37,3 +37,87 @@ sh: 13: cd: can't cd to /usr/src/fusionpbx-install.sh/debian
 
 ### Error no 2
 
+> **ioncube error**
+
+```
+--2025-07-04 06:25:56--  
+
+https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
+
+Resolving downloads.ioncube.com (downloads.ioncube.com)... 192.241.
+136.243
+
+Connecting to downloads.ioncube.com (downloads.ioncube.com)|192.241.136.243|:443...
+
+```
+
+## Solution
+
+1. check php -v
+
+    ```
+    php -v
+
+    Failed loading /usr/lib/php/20210902/ioncube_loader_lin_8.1.so:
+            
+    /usr/lib/php/20210902/ioncube_loader_lin_8.1.so: cannot open shared object file: No such file or directory
+
+    PHP 8.1.33 (cli) (built: Jul  3 2025 16:16:18) (NTS)
+
+    Copyright (c) The PHP Group Zend Engine v4.1.33, 
+
+    Copyright (c) Zend Technologies with Zend OPcache v8.1.33,
+
+    Copyright (c), by Zend Technologies
+
+    ```
+
+2. check this github link
+
+    https://gist.github.com/grafikchaos/4f1f21d549a5ecc06c60
+
+3. check your cpu architecture
+
+    > uname -m
+
+4. Go to and edit the bash/script file of ioncube.sh
+
+    > /usr/src/fusionpbx-install.sh/ubuntu/resources#
+    - when you list files under this directory you will see ioncube.sh file.
+    > nano ioncube.sh
+    
+- Edit the script file under
+
+        ```
+        #get the ioncube load and unzip it
+        if [ .$cpu_architecture = .'x86' ]; then
+
+        #get the ioncube 64 bit loader
+        #wget --no-check-certificate https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
+
+        wget --no-check-certificate http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+
+        #uncompress the file
+        #unzip ioncube_loaders_lin_x86-64.zip
+
+        tar -zxvf ioncube_loaders_lin_x86-64.tar.gz
+
+        #remove the zip file
+        #rm ioncube_loaders_lin_x86-64.zip
+
+        rm ioncube_loaders_lin_x86-64.tar.gz
+
+        ```
+
+    ```
+    1. go to /usr/lib/php/20210902
+
+    2. check your cpu architecture
+
+        ty
+
+    2.  wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+
+    3. tar -zxvf ioncube_loaders_lin_x86-64.tar.gz
+
+    ```
