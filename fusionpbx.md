@@ -1,13 +1,13 @@
 # Fusion PBX Documentation
 
-## 1. Step -1 Install Ubuntu Server 24.04
+## 1. Step -1 Install Debian 12 server (2vCPU,4GB RAM,30GB SSD)
 -  Update and upgrade the server.
 
-## 2. Create an account and login
+## 2. Create FusionPBX account and login
 - https://www.fusionpbx.com/login
 - Discover the dashboard
 
-## 3. Quick install FusionPBX on Ubuntu Server 24.04
+## 3. Quick install FusionPBX on Debian 12
 
 - Go to https://www.fusionpbx.com/download
 
@@ -17,7 +17,7 @@
 
 - paste the url from the download page then hit Enter
 
-    - wget -O - https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/ubuntu/pre-install.sh | sh;
+    - wget -O - https://raw.githubusercontent.com/fusionpbx/fusionpbx-install.sh/master/debian/pre-install.sh | sh; 
 
     - The installation command basically do the below scripts
 

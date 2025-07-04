@@ -47,7 +47,11 @@ https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
 Resolving downloads.ioncube.com (downloads.ioncube.com)... 192.241.
 136.243
 
-Connecting to downloads.ioncube.com (downloads.ioncube.com)|192.241.136.243|:443...
+Connecting to downloads.ioHello everyone, happy Friday ☺  
+Please be reminded that Friday is the LAST DAY to complete your home work and checklist on Analytics in AWS and Machine Learning in AWS. Friday should always be used to prepare yourselves for the coming week. Therefore, please start watching the 2 class videos on Monitoring and Auditing in AWS and Disaster Recovery, Migration and NoSQL DB's In AWS. DO NOT just watch the videos, make sure that you are pausing the videos and practicing on the AWS management console on your computer. Please read the lecture note side by side and prepare your questions, if any, for the coming live classes on Saturday and Sunday.
+
+
+See you.ncube.com (downloads.ioncube.com)|192.241.136.243|:443...
 
 ```
 
@@ -80,12 +84,45 @@ Connecting to downloads.ioncube.com (downloads.ioncube.com)|192.241.136.243|:443
 
     > uname -m
 
-4. Go to and edit the bash/script file of ioncube.sh
+4. Download the zip file from safari network/connect other countries VPN. (https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip)
+
+5. Copy(scp) the zip file to / (root of the remote server) and move to the destination server
+
+    - scp ioncube_loaders_lin_x86-64.zip username@hostip:~/
+
+    - mv ioncube_loaders_lin_x86-64.zip /usr/src/fusionpbx-install.sh/debian/resources
+
+5. Go to and edit the bash/script file of ioncube.sh
 
     > /usr/src/fusionpbx-install.sh/ubuntu/resources#
     - when you list files under this directory you will see ioncube.sh file.
     > nano ioncube.sh
-    
+
+    - Edit the bash script file
+        - > comment the wget command
+
+            ```
+            #get the ioncube load and unzip it
+            if [ .$cpu_architecture = .'x86' ]; then
+        
+            #get the ioncube 64 bit loader
+
+            #wget --no-check-certificate https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
+
+            ```
+    - Save the script and check using 'cat' command
+
+6. Go back to /usr/src/fusionpbx-install.sh/debian/
+
+    - > ls
+
+        - Make sure that there is 'install.sh' file
+
+    - > ./install.sh
+
+7. 
+
+
 - Edit the script file under
 
         ```
@@ -110,6 +147,7 @@ Connecting to downloads.ioncube.com (downloads.ioncube.com)|192.241.136.243|:443
         ```
 
     ```
+
     1. go to /usr/lib/php/20210902
 
     2. check your cpu architecture
