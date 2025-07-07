@@ -22,30 +22,44 @@
     - The installation command basically do the below scripts
 
         ```
-            #!/bin/sh
+        #!/bin/sh
 
-            #upgrade the packages
-            apt-get update && apt-get upgrade -y
+        #upgrade the packages
+        apt-get update && apt-get upgrade -y
 
-            #install packages
-            apt-get install -y git lsb-release
+        #install packages
+        apt-get install -y git lsb-release
 
-            #get the install script
-            cd /usr/src && git clone https://github.com/fusionpbx/fusionpbx-install.sh.git
+        #get the install script
+        cd /usr/src && git clone https://github.com/fusionpbx/fusionpbx-install.sh.git
 
-            #change the working directory
-            cd /usr/src/fusionpbx-install.sh/ubuntu
+        #change the working directory
+        cd /usr/src/fusionpbx-install.sh/ubuntu
 
         ```
 
 - Then check the .install.sh file existed inside the downloaded file path.
     ```
-        - **root@fusionpbx:/usr/src#** cd fusionpbx-install.sh/debian/
+    - **root@fusionpbx:/usr/src#** cd fusionpbx-install.sh/debian/
 
-        - **root@fusionpbx:/usr/src/fusionpbx-install.sh/ubuntu#** ls
+    - **root@fusionpbx:/usr/src/fusionpbx-install.sh/ubuntu#** ls
 
-                install.sh      pre-install.sh      resources
+            install.sh      pre-install.sh      resources
 
-        - > ./install.sh
+    - $ ./install.sh
     
     ```
+## 4. Login to the PBX Dashboard & Change the user credentials
+
+- At the end of the installation script; **the username (admin), password and access url (https://server_ip)** will be provided. 
+    - So Login with those credentials
+    - Change those login credentials in the Home -> Account setting of the PBX Dashboard.
+    - Save the configuration and Login again.
+
+## 5. Create Users
+- Go to 
+- Agent Users
+- Additional Superadmins
+
+## 6. Create Extension
+-  
